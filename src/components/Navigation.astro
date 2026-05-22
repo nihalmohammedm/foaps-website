@@ -1,0 +1,76 @@
+---
+---
+
+<nav>
+  <a href="/" class="logo">
+    <img src="/foaps-logo.svg" alt="Foaps" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/products">Products</a></li>
+    <li><a href="/why">Why Foaps</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div class="nav-end">
+    <a href="#" class="btn btn-outline">Log in</a>
+    <a href="#cta" class="btn btn-fill">Get started →</a>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    height: 68px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 30px;
+  }
+
+  .logo img {
+    height: 100%;
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-3);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--ink);
+  }
+
+  .nav-end {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

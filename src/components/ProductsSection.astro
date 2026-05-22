@@ -1,0 +1,127 @@
+---
+import ProductBlock from './ProductBlock.astro';
+import SectionHeader from './SectionHeader.astro';
+
+const products = [
+  {
+    id: 'receiver',
+    badge: '🍽 For Restaurants',
+    badgeColor: { bg: '#FFF4F1', color: '#F4501C' },
+    title: 'Foaps Receiver',
+    description: 'Manage all your online food delivery orders from Swiggy, Zomato, Dunzo and more — from a single screen, with a single printer, and real-time sync across platforms.',
+    highlights: [
+      'Unified order dashboard across all delivery platforms',
+      'Single KOT printer — no juggling multiple tablets',
+      'Live order tracking and instant status updates',
+      'In-depth platform-wise performance reports'
+    ],
+    linkColor: 'text-orange-500',
+    reverse: false,
+    visualBg: 'white',
+    dotColor: '#F4501C',
+    title2: 'Foaps Receiver',
+    badge2: 'LIVE',
+    badge2Color: { bg: '#FFF4F1', color: '#F4501C' },
+    visual: 'receiver'
+  },
+  {
+    id: 'direct',
+    badge: '💬 For Businesses',
+    badgeColor: { bg: '#EDFAF5', color: '#12A97B' },
+    title: 'Foaps Direct',
+    description: 'Turn WhatsApp into a complete e-commerce channel. Share catalogs, accept payments, and confirm orders — all inside WhatsApp. No platform fees, no commissions, ever.',
+    highlights: [
+      'Product catalog with real-time updates',
+      'Integrated payment links — UPI, cards, net banking',
+      'Order confirmation and tracking via chat',
+      'No hidden charges — ever'
+    ],
+    linkColor: 'text-green-600',
+    reverse: true,
+    visualBg: '#F0FDF8',
+    dotColor: '#25D366',
+    title2: 'WhatsApp Storefront',
+    badge2: 'LIVE',
+    badge2Color: { bg: '#EDFAF5', color: '#12A97B' },
+    visual: 'direct'
+  },
+  {
+    id: 'orderpipe',
+    badge: '🚀 For Restaurants',
+    badgeColor: { bg: '#F2EFFE', color: '#6E3FF3' },
+    title: 'Orderpipe',
+    description: 'Your own food ordering platform — without the 30% revenue share. Let customers discover and order directly from your restaurant, and keep every rupee you earn.',
+    highlights: [
+      'Branded ordering page — no Swiggy or Zomato cut',
+      'Integrated with delivery partners for fulfilment',
+      'Low Commission per-order'
+    ],
+    linkColor: 'text-purple',
+    reverse: false,
+    visualBg: '#F8F6FF',
+    dotColor: '#6E3FF3',
+    title2: 'Orderpipe',
+    badge2: 'Low Commission',
+    badge2Color: { bg: '#F2EFFE', color: '#6E3FF3' },
+    visual: 'orderpipe'
+  },
+  {
+    id: 'engage',
+    badge: '📣 Marketing',
+    badgeColor: { bg: '#FFF8E6', color: '#E09000' },
+    title: 'Foaps Engage',
+    description: 'Run WhatsApp marketing campaigns that actually get read. With 98% open rates, send offers, re-engage lost customers, and build loyalty — all automated and WABA-compliant.',
+    highlights: [
+      'Bulk WhatsApp broadcasts to your customer list',
+      'Automated flows — birthday offers, win-back, upsell',
+      'Campaign analytics — opens, clicks, orders driven',
+      'WABA-compliant — zero spam risk'
+    ],
+    linkColor: 'text-amber',
+    reverse: true,
+    visualBg: '#FFFDF5',
+    dotColor: '#E09000',
+    title2: 'Campaign Dashboard',
+    badge2: 'WhatsApp',
+    badge2Color: { bg: '#FFF8E6', color: '#E09000' },
+    visual: 'engage',
+    comingSoon: true
+  },
+  {
+    id: 'navigate',
+    badge: '🛵 Delivery Tech',
+    badgeColor: { bg: '#EEF4FF', color: '#1A6CF4' },
+    title: 'Foaps Navigate',
+    description: 'A complete delivery management platform for your own rider fleet. Track in real-time, assign orders intelligently, and give riders a simple app that just works — no confusion, no delays.',
+    highlights: [
+      'Real-time rider tracking on a live map',
+      'Smart order assignment — closest rider, fastest route',
+      'Rider app with turn-by-turn navigation',
+      'Proof of delivery and live customer notifications'
+    ],
+    linkColor: 'text-blue',
+    reverse: false,
+    visualBg: '#F0F6FF',
+    dotColor: '#1A6CF4',
+    title2: 'Delivery Command',
+    badge2: 'LIVE',
+    badge2Color: { bg: '#EEF4FF', color: '#1A6CF4' },
+    visual: 'navigate',
+    comingSoon: true
+  }
+];
+---
+
+<section class="products-section" id="products">
+  <div class="section-inner">
+    <SectionHeader
+      label="Our Products"
+      title="Everything you need to run and grow."
+      description="Five focused tools, each solving a specific pain point — designed to work standalone or together as a suite."
+    />
+
+    {products.map((product) => (
+      <ProductBlock product={product} />
+    ))}
+  </div>
+</section>

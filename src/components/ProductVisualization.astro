@@ -1,0 +1,153 @@
+---
+interface Props {
+  product: {
+    visualBg: string;
+    dotColor: string;
+    title2: string;
+    badge2: string;
+    badge2Color: { bg: string; color: string };
+    visual: string;
+  };
+}
+
+const { product } = Astro.props;
+---
+
+<div class="product-visual" style={`background: ${product.visualBg}`}>
+  <div class="visual-header">
+    <div class="visual-header-left">
+      <div class="visual-dot" style={`background: ${product.dotColor}`}></div>
+      <span class="visual-title">{product.title2}</span>
+    </div>
+    <span class="visual-badge-sm" style={`background: ${product.badge2Color.bg}; color: ${product.badge2Color.color}`}>
+      {product.badge2}
+    </span>
+  </div>
+
+  {product.visual === 'receiver' && (
+    <>
+      <div class="order-list">
+        <div class="order-row">
+          <div class="order-platform">
+            <div class="platform-logo" style="background:#FC8019">S</div>
+            <div class="order-meta"><div class="name">Raj Sharma</div><div class="sub">Swiggy · 2 items</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <span class="order-amount">₹480</span>
+            <span class="order-status status-new">New</span>
+          </div>
+        </div>
+        <div class="order-row">
+          <div class="order-platform">
+            <div class="platform-logo" style="background:#E23744">Z</div>
+            <div class="order-meta"><div class="name">Priya Menon</div><div class="sub">Zomato · 3 items</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <span class="order-amount">₹720</span>
+            <span class="order-status status-prep">Preparing</span>
+          </div>
+        </div>
+        <div class="order-row">
+          <div class="order-platform">
+            <div class="platform-logo" style="background:#00B37A">D</div>
+            <div class="order-meta"><div class="name">Arjun Nair</div><div class="sub">Dunzo · 1 item</div></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <span class="order-amount">₹260</span>
+            <span class="order-status status-done">Picked up</span>
+          </div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="val c-orange">38</div><div class="lbl">Orders today</div></div>
+        <div class="stat-box"><div class="val">₹14.2K</div><div class="lbl">Revenue</div></div>
+        <div class="stat-box"><div class="val c-green">99%</div><div class="lbl">Uptime</div></div>
+      </div>
+    </>
+  )}
+
+  {product.visual === 'direct' && (
+    <>
+      <div class="chat-bubbles">
+        <div class="bubble in">Hi! Can I see your menu? 👀</div>
+        <div class="bubble card-bubble">
+          <div class="catalog-item"><div class="catalog-thumb">🍕</div><div class="catalog-info"><div class="cname">Margherita Pizza</div><div class="cprice">₹299</div></div></div>
+        </div>
+        <div class="bubble card-bubble">
+          <div class="catalog-item"><div class="catalog-thumb">🍔</div><div class="catalog-info"><div class="cname">Classic Burger</div><div class="cprice">₹179</div></div></div>
+        </div>
+        <div class="bubble in">I'll take 1 pizza please!</div>
+        <div class="bubble out">✅ Order confirmed! Pay here → pay.foaps.co/xyz</div>
+      </div>
+      <p class="bubble-label">No app needed. Just WhatsApp.</p>
+    </>
+  )}
+
+  {product.visual === 'orderpipe' && (
+    <div>
+      <div class="restaurant-card">
+        <div class="rc-img">🍛</div>
+        <div class="rc-body">
+          <div class="rc-name">The Curry House</div>
+          <div class="rc-tags">
+            <span class="rc-tag">North Indian</span>
+            <span class="rc-tag">30 min delivery</span>
+            <span class="rc-tag">★ 4.6</span>
+          </div>
+        </div>
+      </div>
+      <div class="savings-banner">
+        <div>
+          <div class="s-label">Saved this month</div>
+          <div class="s-sub">vs. Swiggy/Zomato commission</div>
+        </div>
+        <div class="s-val">₹42,800</div>
+      </div>
+    </div>
+  )}
+
+  {product.visual === 'engage' && (
+    <div>
+      <div class="campaign-card">
+        <div class="cc-top">
+          <div class="cc-name">Weekend Offer 🎉</div>
+          <div class="cc-badge">SENT</div>
+        </div>
+        <div class="cc-stats">
+          <div class="cc-stat"><div class="n">4,218</div><div class="l">Delivered</div></div>
+          <div class="cc-stat"><div class="n">3,891</div><div class="l">Opened</div></div>
+          <div class="cc-stat"><div class="n">312</div><div class="l">Orders</div></div>
+        </div>
+        <div class="engage-bar">
+          <div class="bar-label"><span>Open rate</span><span style="font-weight:700;color:var(--amber)">92%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--amber)"></div></div>
+        </div>
+        <div class="engage-bar">
+          <div class="bar-label"><span>Conversion rate</span><span style="font-weight:700;color:var(--green)">7.4%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:7.4%;background:var(--green)"></div></div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {product.visual === 'navigate' && (
+    <div>
+      <div class="map-placeholder">
+        <div class="map-grid"></div>
+        <div class="map-pin"><div class="map-pin-inner"></div></div>
+      </div>
+      <div class="rider-list">
+        <div class="rider-row">
+          <div class="rider-avatar">RK</div>
+          <div class="rider-info"><div class="rider-name">Ravi Kumar</div><div class="rider-loc">📍 2.1 km away · ETA 8 min</div></div>
+          <span class="rider-badge on-route">On route</span>
+        </div>
+        <div class="rider-row">
+          <div class="rider-avatar">AS</div>
+          <div class="rider-info"><div class="rider-name">Anwar Sheikh</div><div class="rider-loc">📍 0.4 km away · Available</div></div>
+          <span class="rider-badge idle">Idle</span>
+        </div>
+      </div>
+    </div>
+  )}
+</div>

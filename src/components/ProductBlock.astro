@@ -1,0 +1,52 @@
+---
+import ProductVisualization from './ProductVisualization.astro';
+
+interface Props {
+  product: {
+    id: string;
+    badge: string;
+    badgeColor: { bg: string; color: string };
+    title: string;
+    description: string;
+    highlights: string[];
+    linkColor: string;
+    reverse: boolean;
+    visualBg: string;
+    dotColor: string;
+    title2: string;
+    badge2: string;
+    badge2Color: { bg: string; color: string };
+    visual: string;
+    comingSoon?: boolean;
+  };
+}
+
+const { product } = Astro.props;
+---
+
+<div class={`product-block fade-up ${product.reverse ? 'reverse' : ''}`} id={product.id}>
+  <div class="product-info">
+    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+      <div class="product-badge" style={`background: ${product.badgeColor.bg}; color: ${product.badgeColor.color}`}>
+        {product.badge}
+      </div>
+      {product.comingSoon && (
+        <div class="coming-soon-badge">COMING SOON</div>
+      )}
+    </div>
+    <h3>{product.title}</h3>
+    <p>{product.description}</p>
+    <ul class="product-highlights">
+      {product.highlights.map((highlight) => (
+        <li>
+          <span class="check" style={`background: ${product.badgeColor.bg}`}>
+            <span class={product.linkColor}>✓</span>
+          </span>
+          {highlight}
+        </li>
+      ))}
+    </ul>
+    <a href="#cta" class={`product-link ${product.linkColor}`}>Get {product.title} →</a>
+  </div>
+  <ProductVisualization product={product} />
+</div>

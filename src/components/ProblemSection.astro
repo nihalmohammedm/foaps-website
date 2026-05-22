@@ -1,0 +1,94 @@
+---
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section class="problem-section">
+  <div class="section-inner">
+    <SectionHeader
+      label="The Problem"
+      title="Running a business shouldn't be this hard."
+      description="Between juggling delivery platforms, managing WhatsApp or On Call orders, and watching commissions eat your margins — you deserve better tools."
+      dark={true}
+    />
+    <div class="problem-grid fade-up">
+      <div class="problem-card">
+        <div class="problem-num">30%</div>
+        <h3>Lost to commissions</h3>
+        <p>Swiggy and Zomato take up to 30% of every order. For a thin-margin restaurant, that's survival money vanishing with each sale.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">4+</div>
+        <h3>Apps to manage orders</h3>
+        <p>Most restaurants toggle between multiple delivery platforms with separate tablets, separate printers, and constant context switching.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">₹0</div>
+        <h3>Earned from incoming orders</h3>
+        <p>Customers DM  / Calls you to buy — but with no catalog, no payment link, and no tracking, those leads just disappear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem-section {
+    background: var(--ink);
+    padding: 100px 6%;
+  }
+
+  .problem-section h2 {
+    color: white;
+  }
+
+  .problem-section .lead {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .problem-card {
+    background: #1a1a24;
+    padding: 40px 36px;
+    transition: background 0.2s;
+  }
+
+  .problem-card:hover {
+    background: #1f1f2e;
+  }
+
+  .problem-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .problem-card p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.65;
+  }
+
+  .problem-num {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: var(--orange);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  @media (max-width: 900px) {
+    .problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

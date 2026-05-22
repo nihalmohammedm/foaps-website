@@ -1,0 +1,105 @@
+---
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section class="why-section" id="why">
+  <div class="section-inner">
+    <SectionHeader
+      label="Why Foaps"
+      title="Built different, on purpose."
+      description="Every product we build starts with one question: what do Global business owners actually need?"
+    />
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-icon" style="background:var(--orange-bg)">🚫</div>
+        <h3>No hidden charges</h3>
+        <p>What you see is what you pay. No per-order cuts, no surprise invoices, no fine print. Every Foaps product has transparent, flat pricing.</p>
+      </div>
+      <div class="why-card fade-up" style="transition-delay:.1s">
+        <div class="why-icon" style="background:var(--green-bg)">🛫</div>
+        <h3>Built from India for the world</h3>
+        <p>Global-first payments, WhatsApp as the primary channel, and support for diverse needs — we build for how global businesses actually operate.</p>
+      </div>
+      <div class="why-card fade-up" style="transition-delay:.2s">
+        <div class="why-icon" style="background:var(--blue-bg)">⚡</div>
+        <h3>Up and running in hours</h3>
+        <p>No 6-week implementation cycles. Connect your accounts, set up your profile, and start taking orders the same day. Onboarding is part of the product.</p>
+      </div>
+      <div class="why-card fade-up" style="transition-delay:.3s">
+        <div class="why-icon" style="background:var(--purple-bg)">🔗</div>
+        <h3>Products that work together</h3>
+        <p>Use Receiver for delivery orders, Orderpipe for direct orders, and Engage to bring customers back. One ecosystem, one dashboard.</p>
+      </div>
+      <div class="why-card fade-up" style="transition-delay:.4s">
+        <div class="why-icon" style="background:var(--amber-bg)">📞</div>
+        <h3>Real human support</h3>
+        <p>WhatsApp support that actually responds. For critical issues, call us. We don't hide behind ticket queues — we pick up.</p>
+      </div>
+      <div class="why-card fade-up" style="transition-delay:.5s">
+        <div class="why-icon" style="background:var(--orange-bg)">📈</div>
+        <h3>Grows with you</h3>
+        <p>Start with one product. Add more as your business scales. Foaps grows alongside you — from your first outlet to your tenth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-section {
+    background: white;
+    padding: 100px 6%;
+  }
+
+  .section-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .why-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .why-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.07);
+  }
+
+  .why-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .why-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.4px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    color: var(--ink-3);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
