@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://foaps.co/sitemap.xml
+Host: foaps.co
